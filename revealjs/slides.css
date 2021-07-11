@@ -20,7 +20,7 @@
 
 .reveal h1 {
     font-family: 'Fira Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 33;
     color: #22817f;
     text-align: left;
@@ -28,7 +28,7 @@
 
 .reveal h2 {
     font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 26
     color: #9fded6;
     text-align: left;
@@ -37,7 +37,7 @@
 .reveal h3 {
     font-family: 'Fira Sans', sans-serif;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 21;
     color: #9fded6;
     text-align: left;
@@ -48,6 +48,14 @@
     font-weight: 300;
     font-size: 21;
     color: #000000;
+}
+
+.reveal a {
+    color: #9fded6;
+}
+
+.reveal a:hover {
+    color: #22817f;
 }
 
 .reveal blockquote{

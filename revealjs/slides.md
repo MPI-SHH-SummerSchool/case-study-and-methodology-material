@@ -1,6 +1,6 @@
 ---
 title: 'Presentation Title'
-subtitle: 'Presentation Subtitle'
+subtitle: 'Presentation Subtitle' # Optional, delete line if not needed
 author: Erika Mustermann
 date: 2021-99-99
 autosize: true
@@ -16,8 +16,7 @@ css: slides.css
 ---
 
 # Section Header 1 {data-background="assets/img/IMPRS_SHH_SummerSchool_2021-SectionSlide.jpg" style="color:white;;text-align:left" class="center"}
-<!-- For any section title slide, you must include the custom aesthetics specified in {} -->
-<!-- TODO convert the style/class etc. into a specific class? --> 
+<!-- For any section title slide, you must include the custom aesthetics specified above in {} -->
 
 
 # Standard Slide 
@@ -44,4 +43,9 @@ echo "Hello world!"
 
 > A quote block
 
+# Images and URLs
+
+![With ALT text](https://summerschool.shh.mpg.de/images/jss_wide.png)
+
+And here is a [URL](https://summerschool.shh.mpg.de/)
 
