@@ -2,9 +2,11 @@
 
 Latex, HTML, Github, Scientific design for IMPRS SHH Summer School
 
-## Colours
+## Design Guidlines
 
-### Hex
+### Colours
+
+#### Hex
 
 - Primary Green: #22817f 
 - Secondary Green: #9fded6
@@ -12,13 +14,17 @@ Latex, HTML, Github, Scientific design for IMPRS SHH Summer School
 - White: #FFFFFF
 - Black: #000000
 
-## Fonts
+### Fonts
 
 - Main: [Fira Sans](https://fonts.google.com/specimen/Fira+Sans?query=Fira) [400, 600]
 - Monospace (for code):  [Fira Code](https://fonts.google.com/specimen/Fira+Code?query=Fira) [400]
 
-## Background Images
+### Background Images
 
-Main Title Slide:
-Section Title Slide:
-Default Slide:
+- Main Title Slide: `<template>/assets/img/IMPRS_SHH_SummerSchool_2021-TitleSlide.jpg` 
+- Section Title Slide: `<template>/assets/img/IMPRS_SHH_SummerSchool_2021-SectionSlide.jpg`
+- Default Slide: `<template>/assets/img/IMPRS_SHH_SummerSchool_2021-NormalSlide.jpg`
+
+## Available Templates
+
+- `reveal.js` HTML (tested with Rmarkdown/Rstudio)
