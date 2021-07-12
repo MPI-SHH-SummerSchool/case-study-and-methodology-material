@@ -2,7 +2,7 @@
 
 Latex, HTML, Github, Scientific design for IMPRS SHH Summer School
 
-**The `reveal.js/` folder provides the presentation template in `reveal.js`. The design guidlines are listed below: ** 
+**The `reveal.js/` folder provides the presentation template in `reveal.js`. The design guidlines are listed below:** 
 
 ## Design Guidlines
 
