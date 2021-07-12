@@ -22,7 +22,7 @@
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
     font-size: 33;
-    color: #22817f;
+    color: #007d7a;
     text-align: left;
 }
 
@@ -30,7 +30,7 @@
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
     font-size: 26
-    color: #9fded6;
+    color: #a4ddd4;
     text-align: left;
 }
 
@@ -39,7 +39,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 21;
-    color: #9fded6;
+    color: #a4ddd4;
     text-align: left;
 }
 
@@ -47,15 +47,15 @@
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
     font-size: 21;
-    color: #000000;
+    color: #1d1d1b;
 }
 
 .reveal a {
-    color: #9fded6;
+    color: #a4ddd4;
 }
 
 .reveal a:hover {
-    color: #22817f;
+    color: #007d7a;
 }
 
 .reveal blockquote{
@@ -70,7 +70,7 @@
     border-left: 0.3em solid #ccc;
     padding: 0 15px;
     font-style: italic;
-    color: #000000;
+    color: #1d1d1b;
     quotes: "\201C""\201D""\2018""\2019";
     font-size: 18px;
     background-color: #d8d8d8;
@@ -80,7 +80,7 @@
     font-family: 'Fira Code';
     font-style: italic;
     quotes: "\201C""\201D""\2018""\2019";
-    color: #000000;
+    color: #1d1d1b;
     background-color: #d8d8d8;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .reveal .progress span {
-  background: #22817f;
+  background: #007d7a;
 }
 
 .reveal section img { background:none; border:none; box-shadow:none; }
