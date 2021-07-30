@@ -1,0 +1,257 @@
+%!TEX TS-program = xelatex
+
+\documentclass[12pt]{article}
+
+% this sets nice a4 page or letter page
+	\usepackage[a4paper]{geometry} % for the rest of the world
+	% \usepackage[letterpaper, margin=1in]{geometry} % for US 
+
+% this is to set up a glossary
+	\usepackage{glossaries}
+
+% for adding comments and todo notes (great for collaboration):
+	\usepackage{pdfcomment,todonotes}
+
+% this loads the unicode and font-specific packages
+	\usepackage{fontspec,xltxtra,xunicode}
+%   	 \usepackage{libertine}
+
+% this loads the linguistic stuff
+% for doc consult http://mirror.switch.ch/ftp/mirror/tex/macros/latex/contrib/gb4e/gb4e-doc.pdf
+	\usepackage{gb4e, cgloss}
+% formatting the examples for nicer look
+		\let\eachwordone=\itshape % italic data line (default is \rm)
+		\let\eachwordtwo=\small % for small print glosses
+
+% and advanced bibliography stuff
+	\usepackage{natbib}
+		\renewcommand{\bibfont}{\small}
+		\renewcommand{\bibsep}{1pt} % space between entries
+		\setcitestyle{comma,aysep={},notesep={:}} % comma between citations (for semicolon, type 'semicolon'); no comma between author and year; no space between citation and post-citation note
+		\newcommand\cites[1]{\citeauthor{#1}'s\ (\citeyear{#1})} % to use genitive s with citations
+
+
+% nice hyperrefs, with some pretty stuff
+   	\usepackage{hyperref} % hyperlinks
+		\hypersetup{colorlinks=true, citecolor=blue, linkcolor=black, urlcolor=black, pdfauthor={}, pdftitle={}, breaklinks=true}
+
+
+% to tinker with lists
+   	\usepackage{enumitem}
+
+
+% using leipzig glosses
+	\usepackage{leipzig}
+		\newleipzig{conv}{conv}{converb}
+
+
+% tells LaTeX to actually make the glossary
+	\makeglossaries
+
+
+% set up the title page
+	\title{Template}
+% for font styles (and other stuff), see http://en.wikibooks.org/wiki/LaTeX/Formatting#Font_Styles
+	\author{Me Me}
+	\date{\today} 
+
+
+\begin{document}
+
+
+% generate title
+\maketitle
+
+% generate a table of contents
+\tableofcontents
+
+
+% this is a section without numbering
+\section*{Introduction}
+\label{sec:intro} % this is a label
+
+Let's type some diacritics and special characters: á è, Ὁ ɯ ʉ ħ -- they just show up in the pdf, no extra work required!
+
+This is a text.
+It   does not
+matter how many
+spaces there are
+between the words - it is still the same paragraph.
+You can break a line \\ like this.
+
+
+To start a new paragraph, you can use two empty lines or the \par command if you want.
+\pdfcomment[color=blue]{this is a comment!!!!}
+
+If you to put something into quotations, use ``this''. For a nice quote-like text formatting, you can use the:
+\begin{quote}
+	quote environment. It nicely wraps the stuff into a paragraph offset by two margins.
+\end{quote}
+
+
+You can also do footnotes\footnote{pretty neat, huh?} easily.
+
+
+% this is a numbered section
+\section{Some part}
+
+This is a reference to section \nameref{sec:intro} on the page \pageref{sec:intro}.
+
+% here's a subsection, also numbered
+\subsection{Lists}
+
+Let's list some stuff:
+
+\begin{enumerate}
+	\item This is an enumerate item
+	\item Another one
+	\item \begin{enumerate}
+		\item nested
+		\item and again
+		\end{enumerate}
+	\item last one
+\end{enumerate}
+
+
+or itemize:
+
+\begin{itemize}
+	\item This is an itemized item
+	\item Another one
+	\item \begin{itemize}
+		\item nested
+		\item and again
+		\end{itemize}
+	\item last one
+\end{itemize}
+
+
+\subsection{Tables and Figures}
+
+Here's a table. Do not worry if it shows up in another spot in the PDF. That is normal, because it's a float. More on that in the workshop.
+
+\begin{table}
+	\centering
+	\begin{tabular}{|l|r|c|} \hline
+		a   & b   & d   \\ \hline
+		df  & df  & eg  \\ \hline
+		bla & bla & bla \\ \hline
+	\end{tabular}
+	\caption{Lots of blabla}
+	\label{tab:firsttable}
+\end{table}
+% TODO: \usepackage{graphicx} required
+
+
+
+We can of course also insert figures. Like tables they `float' around in the document. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{testpic.jpg}
+	\caption{Not the type of latex we are working with}
+	\label{fig:testpic}
+\end{figure}
+
+
+
+
+\section{Examples with and without glosses}
+
+Very similar to quotes (also consult the gb4e pdf manual - just google):
+
+\begin{exe}
+	\ex This is a numbered example
+	\ex \label{ex:some} You can also label it
+\end{exe}
+
+Labels can be recalled in the same way (like see example \ref{ex:some}).
+
+
+But what we really want are glossed examples, so here we go.
+
+Nice glossed example with a description:
+\begin{exe}
+	\ex Bernese German \\
+	\gll Bärndütsch isch di beschti sprach! \\
+		Bernese.German \Cop.\Tsg{} \Art.\Def.\F{} best.\Conv.\F{} language		\\
+	\glt `Bernese German is the best language!'\protect\footnotemark \hfill 
+	\label{ex:first}
+\end{exe}
+
+
+same without a description:
+\begin{exe}
+	\ex \gll Bärndütsch isch di beschti sprach! \\
+		Bernese.German \Cop.\Tsg{} \Art.\Def.\F{} best.\F{} language		\\
+	\glt `Bernese German is the best language!' \hfill 
+	\label{ex:second}
+\end{exe}
+
+
+nested examples:
+\begin{exe} \ex
+	\begin{xlist}
+	\ex \gll Gli isch summer.	\\
+		soon \Cop.\Tsg{} summer			\\
+	\glt `Soon it's summer.' \hfill \citep[]{}
+	\label{ex:third}
+	\ex \gll Was isch los?	\\
+		what \Cop.\Tsg{} loose			\\
+	\glt `What's happening?' \hfill \citep[]{}
+	\label{ex:fourth}
+	\end{xlist}
+\end{exe}
+
+% TODO: also have to do this
+
+
+This is the second example label \ref{ex:second}.
+
+
+\section{Summary}
+
+Other fun stuff: formulas (\LaTeX was developed for math, after all). Formulas must be surrounded with dollar signs.
+
+$$
+	f(x) = \sum_{i=1}^{n} \frac{x}{i}
+$$
+
+The underscore is an index: $a_5$, the hat is an exponent: $b_6$. Both these symbols (as well as dollar signs) cannot be used in normal text.
+If you need an underscore or dollar sign use in text, you need to escape it with a backslash like so: \_ or \&
+
+
+Last but not least: bibliography!
+
+Add citations with parentheses like this  \citep{bickel2007typology} or without like this  \citealt{macaulay1996grammar}.
+There are more options! Also read up on the natbib package.
+
+
+
+\section{How to get a pdf out of this} % (fold)
+\label{sec:pdf}
+
+% write note of this
+% TODO: this is a what I still have to do
+
+
+\begin{enumerate}
+	\item run \LaTeX{} twice (yes, it has to be twice, otherwise things won't work out in many cases)
+	\item run BibTeX once
+	\item run \LaTeX{} again
+	\item generate pdf (depends on editor how exactly you get there)
+\end{enumerate}
+
+
+% section how_to_get_a_pdf_out_of_this (end)
+
+
+Now we let the magic work and create our glossary. 
+
+\printglossary[title=Glosses,type=\leipzigtype, style=block]
+
+
+\bibliographystyle{unified.linguistic}	
+\bibliography{testbib}
+	
+\end{document}
